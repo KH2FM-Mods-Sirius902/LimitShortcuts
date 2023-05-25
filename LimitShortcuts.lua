@@ -1,10 +1,11 @@
--- Limit Shortcuts (1.2.1)
+-- Limit Shortcuts (1.2.2)
+-- fixes circle confirm address
 
 local offset = 0x56454E
 -- x tr sq o
 local game_version = 0x17D - offset
 local shortcuts_addr = 0x5C75B8 - offset
-local circle_confirm_addr = 0x8C9A5E - offset
+local circle_confirm_addr = 0x8C9A6E - offset
 
 local gl = 0x68
 local jp = 0x66
@@ -22,7 +23,6 @@ local triangle_shortcut = ars_arcanum
 function _OnInit()
     if ReadByte(game_version) ~= gl then
         shortcuts_addr = 0x5C75A8 - offset
-        circle_confirm_addr = 0x8C9A6E - offset
         print('Limit Shortcuts initialized: JP')
     else
         print('Limit Shortcuts initialized: Global')
